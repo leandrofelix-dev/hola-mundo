@@ -1,23 +1,61 @@
 extends Node2D
 
-var office_scene: PackedScene = preload("res://scenes/maps/office.tscn")
+var office_scene = preload("res://scenes/maps/office.tscn")
+@onready var label = $CanvasLayer/RichTextLabel
+@onready var timer = $Timer
 
-@onready var story_label = $CanvasLayer/RichTextLabel
+var textos = [
+	"Bruno é um talentoso estudante de TI do IFCE Campus Cedro.",
+	"Sua dedicação rendeu-lhe um estágio cobiçado em uma grande empresa de tecnologia",
+	"Quando menos esperava, surgiu a oportunidade de um intercâmbio acadêmico na Espanha",
+	"Porém...",
+	"Havia um desafio inesperado: sua efetivação na empresa estava condicionada ao domínio do espanhol em um teste de 1 dia na empresa.",
+	"Agora, Bruno precisa provar que é capaz..."
+]
+var index = 0
 
 func _ready():
-	story_label.text = """
-		[center][b]Ano 2094 - Estação Lunar Omega[/b][/center]
-		
-		A humanidade expandiu suas fronteiras para além da Terra.  
-		Você, um especialista em segurança cibernética, recebeu uma missão urgente:  
-		Um ataque hacker comprometeu os sistemas da estação.
+	label.text = ""
+	label.visible_ratio = 0
+	mostrar_proximo_texto()
 
-		Sua primeira tarefa? Descobrir quem está por trás disso.
-
-		[center][b]Prepare-se...[/b][/center]
-		"""
-
-	var timer = get_tree().create_timer(5)  
+func mostrar_proximo_texto():
+	if index >= textos.size():
+		# Animação final antes de trocar de cena
+		var final_tween = create_tween()
+		final_tween.tween_property(label, "modulate:a", 0, 1.5)\
+				  .set_ease(Tween.EASE_IN)\
+				  .set_trans(Tween.TRANS_CUBIC)
+		await final_tween.finished
+		get_tree().change_scene_to_packed(office_scene)
+		return
+	
+	# Mostra apenas o texto atual (sem acumular)
+	label.text = textos[index]
+	label.modulate.a = 0
+	label.visible_ratio = 0
+	
+	# Animação de fade-in
+	var fade_tween = create_tween()
+	fade_tween.tween_property(label, "modulate:a", 1, 0.8)\
+			 .set_ease(Tween.EASE_OUT)\
+			 .set_trans(Tween.TRANS_SINE)
+	
+	# Animação de digitação
+	var type_tween = create_tween()
+	type_tween.tween_property(label, "visible_ratio", 1, textos[index].length() * 0.03)\
+			 .set_ease(Tween.EASE_IN_OUT)\
+			 .set_trans(Tween.TRANS_LINEAR)
+	
+	index += 1
+	await type_tween.finished
+	
+	# Espera antes do próximo texto
+	timer.wait_time = 2.0  # Tempo entre textos
+	timer.start()
 	await timer.timeout
+	
+	mostrar_proximo_texto()
 
-	get_tree().change_scene_to_packed(office_scene)
+func _on_timer_timeout():
+	pass  # Mantido para compatibilidade
