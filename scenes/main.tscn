@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ahb6y85m558"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_n16xb"]
+[ext_resource type="Shader" path="res://resources/shaders/water.gdshader" id="2_62icp"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="3_01frp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6q8x"]
+shader = ExtResource("2_62icp")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 1.0
+shader_parameter/tile = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_n16xb")
+metadata/_edit_vertical_guides_ = [-523.0]
+
+[node name="background_temporario" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_d6q8x")
+position = Vector2(1006, 374)
+scale = Vector2(42.625, 50)
+texture = ExtResource("3_01frp")

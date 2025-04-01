@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://brtue6cyl2hfn"]
+
+[ext_resource type="Shader" path="res://resources/shaders/water.gdshader" id="1_cj342"]
+[ext_resource type="PackedScene" uid="uid://pt5ammfut28n" path="res://scenes/characters/player.tscn" id="1_qe200"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="2_fyd6g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45qjr"]
+shader = ExtResource("1_cj342")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 1.0
+shader_parameter/tile = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Office" type="Node2D"]
+
+[node name="background_temporario" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_45qjr")
+position = Vector2(547, 374)
+scale = Vector2(100, 50)
+texture = ExtResource("2_fyd6g")
+
+[node name="Player" parent="." instance=ExtResource("1_qe200")]

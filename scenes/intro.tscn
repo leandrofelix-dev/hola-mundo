@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnhxvgq7t2xey"]
+
+[ext_resource type="Script" path="res://scenes/intro.gd" id="1_hm8ux"]
+[ext_resource type="Shader" path="res://resources/shaders/water.gdshader" id="2_sc1ww"]
+[ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="3_yg412"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17jsy"]
+shader = ExtResource("2_sc1ww")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 1.0
+shader_parameter/tile = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_hm8ux")
+
+[node name="background_temporario" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_17jsy")
+position = Vector2(152, 374)
+scale = Vector2(50.625, 50)
+texture = ExtResource("3_yg412")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="story_text" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 77.0
+offset_top = 75.0
+offset_right = 1166.0
+offset_bottom = 698.0
+text = "Era uma vez..."
