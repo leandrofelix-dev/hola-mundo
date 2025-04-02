@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsaehiu4b4xom"
-path="res://.godot/imported/office.png-a6e4ec4973221c669c7f96f8edab48a9.ctex"
+uid="uid://d2ey80nkd7yqp"
+path="res://.godot/imported/rooms.png-aa60d7f3219df67557812786ad1abc88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/office.png"
-dest_files=["res://.godot/imported/office.png-a6e4ec4973221c669c7f96f8edab48a9.ctex"]
+source_file="res://assets/tiles/rooms.png"
+dest_files=["res://.godot/imported/rooms.png-aa60d7f3219df67557812786ad1abc88.ctex"]
 
 [params]
 
