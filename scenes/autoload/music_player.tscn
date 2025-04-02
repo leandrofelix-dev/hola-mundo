@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://75cxk0b01fjj"]
 
 [ext_resource type="AudioStream" uid="uid://05sufitseb2b" path="res://assets/audio/beach-waves.mp3" id="1_nvqnw"]
-[ext_resource type="Script" path="res://scenes/autoload/music_player.gd" id="2_5m715"]
+[ext_resource type="Script" uid="uid://c47e27p8genqn" path="res://scenes/autoload/music_player.gd" id="2_5m715"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 process_mode = 3

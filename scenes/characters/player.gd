@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var max_speed: float = 120.0
+@export var acceleration: float = 5.0
+@export var friction: float = 8.0
 var can_move: bool = true
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if not can_move:
 		return
 
@@ -11,12 +13,19 @@ func _physics_process(_delta):
 
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
+		$Sprite2D.flip_h = false
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
+		$Sprite2D.flip_h = true
 	if Input.is_action_pressed("ui_down"):
 		direction.y += 1
 	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 
-	velocity = direction.normalized() * speed
+	# Movimento mais fluido com move_toward()
+	if direction != Vector2.ZERO:
+		velocity = velocity.move_toward(direction.normalized() * max_speed, acceleration * delta * 100)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta * 100)
+
 	move_and_slide()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://44rt4llhx727"]
 
-[ext_resource type="Script" path="res://scenes/ui/loading_screen.gd" id="1_mlo8p"]
+[ext_resource type="Script" uid="uid://daoy8tq2s3wu6" path="res://scenes/ui/loading_screen.gd" id="1_mlo8p"]
 [ext_resource type="PackedScene" uid="uid://doqa6vjfcdi1a" path="res://scenes/ui/sound_button.tscn" id="2_3brit"]
-[ext_resource type="Shader" path="res://resources/shaders/water.gdshader" id="2_hh8r5"]
+[ext_resource type="Shader" uid="uid://bkih4ve10s0jk" path="res://resources/shaders/water.gdshader" id="2_hh8r5"]
 [ext_resource type="Texture2D" uid="uid://d1saoawy2e1te" path="res://assets/images/square.png" id="3_ewly3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2bjy"]
@@ -48,8 +48,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b2jnx"]
 _data = {
-"RESET": SubResource("Animation_aayyu"),
-"loading": SubResource("Animation_n08g7")
+&"RESET": SubResource("Animation_aayyu"),
+&"loading": SubResource("Animation_n08g7")
 }
 
 [node name="LoadingScreen" type="Node"]
