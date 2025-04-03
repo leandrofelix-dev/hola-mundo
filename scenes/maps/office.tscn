@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://brtue6cyl2hfn"]
+[gd_scene load_steps=47 format=3 uid="uid://brtue6cyl2hfn"]
 
 [ext_resource type="PackedScene" uid="uid://pt5ammfut28n" path="res://scenes/characters/player.tscn" id="1_qe200"]
 [ext_resource type="Texture2D" uid="uid://d2ey80nkd7yqp" path="res://assets/tiles/rooms.png" id="2_8vik5"]
@@ -2526,6 +2526,27 @@ sources/1 = SubResource("TileSetAtlasSource_m44v8")
 sources/2 = SubResource("TileSetAtlasSource_ko34o")
 sources/3 = SubResource("TileSetAtlasSource_a07in")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpn6a"]
+size = Vector2(32.5, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dftng"]
+size = Vector2(16, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1yqh"]
+size = Vector2(41.125, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5xbp"]
+size = Vector2(21, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysuwm"]
+size = Vector2(14.75, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vrpv"]
+size = Vector2(57, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlnlb"]
+size = Vector2(12.5, 8)
+
 [node name="Office" type="Node2D"]
 
 [node name="chao" type="TileMap" parent="."]
@@ -2631,6 +2652,40 @@ layer_2/name = "Layer2"
 layer_2/tile_data = PackedInt32Array(2883659, 720897, 7, 2949195, 720897, 8, 2359372, 458753, 12, 2424908, 458753, 13, 2490444, 458753, 14, 2359373, 524289, 12, 2424909, 524289, 13, 2490445, 524289, 14, 2359374, 327681, 12, 2359362, 786433, 15, 2424898, 786433, 16, 2490434, 786433, 17, 1835069, 1, 8, 1900605, 1, 9, 1835072, 1, 8, 1900608, 1, 9, 1835075, 1, 8, 1900611, 1, 9, 1835078, 1, 8, 1900614, 1, 9, 1835081, 1, 8, 1900617, 1, 9, 1376317, 1, 8, 1441853, 1, 9, 1376320, 1, 8, 1441856, 1, 9, 1376323, 1, 8, 1441859, 1, 9, 1376326, 1, 8, 1441862, 1, 9, 1376329, 1, 8, 1441865, 1, 9, 1638473, 720897, 7, 1704009, 720897, 8, 1638470, 720897, 7, 1704006, 720897, 8, 1638467, 720897, 7, 1704003, 720897, 8, 1638464, 720897, 7, 1704000, 720897, 8, 1638461, 720897, 7, 1703997, 720897, 8, 1179709, 720897, 7, 1245245, 720897, 8, 1179712, 720897, 7, 1245248, 720897, 8, 1179715, 720897, 7, 1245251, 720897, 8, 1179718, 720897, 7, 1245254, 720897, 8, 1179721, 720897, 7, 1245257, 720897, 8, 1245241, 589825, 24, 1310777, 589825, 25, 1703993, 589825, 24, 1769529, 589825, 25, 2949184, 655361, 31, 2949185, 589825, 34, 3014721, 589825, 35, 2949186, 786433, 31, 2883648, 655361, 30, 2883649, 720897, 30, 2883650, 786433, 30, 2621507, 524289, 34, 2687043, 524289, 35, 2555972, 851969, 37, 2621508, 720897, 36, 2687044, 720897, 37, 2490436, 851969, 36, 1048609, 655363, 7, 1114145, 655363, 8, 1179681, 655363, 9, 1048610, 720899, 7, 1114146, 720899, 8, 1179682, 720899, 9, 1048611, 655363, 7, 1114147, 655363, 8, 1179683, 655363, 9, 1048612, 720899, 7, 1114148, 720899, 8, 1179684, 720899, 9, 1048613, 655363, 7, 1114149, 655363, 8, 1179685, 655363, 9, 1048614, 720899, 7, 1114150, 720899, 8, 1179686, 720899, 9, 1048615, 655363, 7, 1114151, 655363, 8, 1179687, 655363, 9, 1048616, 720899, 7, 1114152, 720899, 8, 1179688, 720899, 9, 1048617, 655363, 7, 1114153, 655363, 8, 1179689, 655363, 9, 1048618, 720899, 7, 1114154, 720899, 8, 1179690, 720899, 9, 1048619, 655363, 7, 1114155, 655363, 8, 1048620, 720899, 7, 1114156, 720899, 8, 1179691, 655363, 9, 1179692, 720899, 9, 393250, 786435, 15, 458786, 786435, 16, 393251, 851971, 15, 458787, 851971, 16)
 layer_3/name = "Layer3"
 layer_3/tile_data = PackedInt32Array(2490435, 786433, 22, 2555971, 786433, 23, 2621507, 786433, 23, 2687043, 786433, 23, 2490436, 851969, 36, 2555972, 720897, 35, 2687051, 1, 14, 2752587, 1, 15, 524323, 589825, 14, 589859, 589825, 15, 524324, 655361, 14, 589860, 655361, 15, 524319, 458753, 12, 589855, 458753, 13, 655391, 458753, 14, 524320, 524289, 12, 589856, 524289, 13, 655392, 524289, 14, 2359360, 720897, 12, 2359361, 786433, 12, 917562, 720897, 12, 917563, 786433, 12, 524325, 720897, 11, 524326, 786433, 11, 851990, 720897, 11, 851991, 786433, 11)
+
+[node name="colisao" type="StaticBody2D" parent="decoracao"]
+
+[node name="1" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1200, 673)
+shape = SubResource("RectangleShape2D_tpn6a")
+
+[node name="2" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1201, 719)
+shape = SubResource("RectangleShape2D_tpn6a")
+
+[node name="3" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1192, 696)
+shape = SubResource("RectangleShape2D_dftng")
+
+[node name="4" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1046.44, 716.5)
+shape = SubResource("RectangleShape2D_f1yqh")
+
+[node name="5" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1093.5, 641)
+shape = SubResource("RectangleShape2D_m5xbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1019.62, 610)
+shape = SubResource("RectangleShape2D_ysuwm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1218.5, 591.5)
+shape = SubResource("RectangleShape2D_1vrpv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(1063, 598)
+shape = SubResource("RectangleShape2D_dlnlb")
 
 [node name="Player" parent="." instance=ExtResource("1_qe200")]
 position = Vector2(1147, 650)
