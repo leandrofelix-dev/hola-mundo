@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu0vo5hhvq2gj"]
+
+[ext_resource type="Script" uid="uid://5vvi7m05t7c3" path="res://scenes/characters/mira.gd" id="1_4wt08"]
+[ext_resource type="Texture2D" uid="uid://cm4x8wl15gf1l" path="res://assets/sprites/mira.png" id="1_xhgo2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wt08"]
+atlas = ExtResource("1_xhgo2")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfiy"]
+atlas = ExtResource("1_xhgo2")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k7xy"]
+atlas = ExtResource("1_xhgo2")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qbcl"]
+atlas = ExtResource("1_xhgo2")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx2g6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wt08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k7xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qbcl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Mira" type="Node2D"]
+script = ExtResource("1_4wt08")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yx2g6")
+animation = &"idle"
+speed_scale = 0.5

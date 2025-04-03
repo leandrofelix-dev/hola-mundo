@@ -1,19 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://pt5ammfut28n"]
+[gd_scene load_steps=12 format=3 uid="uid://pt5ammfut28n"]
 
 [ext_resource type="Script" uid="uid://c785n8sq6i3d3" path="res://scenes/characters/player.gd" id="1_ia0qf"]
 [ext_resource type="Texture2D" uid="uid://cu56sboxqsiv7" path="res://assets/sprites/main_character.png" id="2_b3awc"]
+[ext_resource type="Texture2D" uid="uid://dmhcnpy2vifoe" path="res://assets/sprites/walk.png" id="3_76oj4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3dn0"]
 radius = 13.0
 height = 36.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyp2m"]
+atlas = ExtResource("2_b3awc")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76oj4"]
+atlas = ExtResource("3_76oj4")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atpat"]
+atlas = ExtResource("3_76oj4")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqtwu"]
+atlas = ExtResource("3_76oj4")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyoc"]
+atlas = ExtResource("3_76oj4")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqtwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyp2m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76oj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atpat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqtwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eyoc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yewv4"]
+size = Vector2(207, 19.5)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(620, 360)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ia0qf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_b3awc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p3dn0")
@@ -24,3 +73,12 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kqtwu")
+animation = &"walk"
+frame_progress = 0.926691
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(1036, 590)
+shape = SubResource("RectangleShape2D_yewv4")

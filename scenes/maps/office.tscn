@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brtue6cyl2hfn"]
+[gd_scene load_steps=40 format=3 uid="uid://brtue6cyl2hfn"]
 
 [ext_resource type="PackedScene" uid="uid://pt5ammfut28n" path="res://scenes/characters/player.tscn" id="1_qe200"]
 [ext_resource type="Texture2D" uid="uid://d2ey80nkd7yqp" path="res://assets/tiles/rooms.png" id="2_8vik5"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c10ui72yi4ewa" path="res://assets/tiles/office2.png" id="4_yghfa"]
 [ext_resource type="Texture2D" uid="uid://dsaehiu4b4xom" path="res://assets/tiles/office.png" id="5_csa6a"]
 [ext_resource type="Texture2D" uid="uid://b5eny7p2bhpcw" path="res://assets/tiles/office3.png" id="6_csa6a"]
+[ext_resource type="PackedScene" uid="uid://b0f8wrx8qw6xe" path="res://scenes/characters/irine.tscn" id="7_ko34o"]
+[ext_resource type="PackedScene" uid="uid://bu0vo5hhvq2gj" path="res://scenes/characters/mira.tscn" id="8_ko34o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yghfa"]
 texture = ExtResource("3_22fle")
@@ -767,6 +769,82 @@ texture = ExtResource("2_8vik5")
 
 [sub_resource type="TileSet" id="TileSet_yghfa"]
 sources/5 = SubResource("TileSetAtlasSource_22fle")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_csa6a"]
+a = Vector2(1264, 754)
+b = Vector2(1264, 240)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ko34o"]
+a = Vector2(1265, 230)
+b = Vector2(880, 229)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m44v8"]
+a = Vector2(880, 49)
+b = Vector2(880, 239)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a07in"]
+a = Vector2(881, 38)
+b = Vector2(481, 38)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jro5x"]
+a = Vector2(479, 368)
+b = Vector2(479, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tpn6a"]
+a = Vector2(1265, 753)
+b = Vector2(1007, 753)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dftng"]
+a = Vector2(464, 239)
+b = Vector2(320, 239)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f1yqh"]
+a = Vector2(320, 465)
+b = Vector2(320, 228)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m5xbp"]
+a = Vector2(465, 400)
+b = Vector2(464, 228)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ysuwm"]
+a = Vector2(784, 464)
+b = Vector2(319, 463)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1vrpv"]
+a = Vector2(1007, 754)
+b = Vector2(1007, 606)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dlnlb"]
+a = Vector2(991, 607)
+b = Vector2(769, 606)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hix2m"]
+size = Vector2(207, 19.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdfyc"]
+size = Vector2(80, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdluf"]
+size = Vector2(62, 18)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hix2m"]
+a = Vector2(784, 577)
+b = Vector2(784, 463)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csa6a"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko34o"]
+size = Vector2(322, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m44v8"]
+size = Vector2(127, 31.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a07in"]
+size = Vector2(16, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jro5x"]
+size = Vector2(15, 33)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m44v8"]
 texture = ExtResource("5_csa6a")
@@ -2450,11 +2528,6 @@ sources/3 = SubResource("TileSetAtlasSource_a07in")
 
 [node name="Office" type="Node2D"]
 
-[node name="OfficeSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_22fle")
-autoplay = true
-attenuation = 5.46416
-
 [node name="chao" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ko34o")
 format = 2
@@ -2466,6 +2539,86 @@ tile_set = SubResource("TileSet_yghfa")
 collision_visibility_mode = 1
 format = 2
 layer_0/tile_data = PackedInt32Array(2490430, 720901, 1, 2555966, 720901, 1, 2621502, 720901, 1, 2687038, 720901, 1, 2752574, 720901, 1, 2818110, 720901, 1, 2883646, 720901, 1, 2949182, 720901, 1, 3014718, 720901, 1, 3145790, 5, 12, 2359361, 65541, 9, 2424897, 65541, 10, 2359362, 65541, 9, 2359363, 65541, 9, 2424899, 65541, 10, 2359364, 65541, 9, 2424900, 65541, 10, 2359365, 131077, 9, 2424901, 131077, 10, 2359371, 65541, 9, 2424907, 65541, 10, 2359372, 65541, 9, 2424908, 65541, 10, 2359373, 65541, 9, 2424909, 65541, 10, 2359374, 65541, 9, 2424910, 65541, 10, 2359375, 655365, 0, 2424911, 720901, 1, 3080271, 589829, 11, 3145807, 589829, 12, 3145791, 65541, 12, 3145792, 65541, 12, 3145793, 65541, 12, 3145794, 65541, 12, 3145795, 65541, 12, 3145796, 65541, 12, 3080261, 65541, 11, 3145797, 65541, 12, 3080262, 65541, 11, 3145798, 65541, 12, 3080263, 65541, 11, 3145799, 65541, 12, 3080264, 65541, 11, 3145800, 65541, 12, 3080265, 65541, 11, 3145801, 65541, 12, 3080266, 65541, 11, 3145802, 65541, 12, 3080267, 65541, 11, 3145803, 65541, 12, 3080268, 65541, 11, 3145804, 65541, 12, 3080269, 65541, 11, 3145805, 65541, 12, 3080270, 65541, 11, 3145806, 65541, 12, 3014735, 720901, 1, 2949199, 720901, 1, 2883663, 720901, 1, 2818127, 720901, 1, 2752591, 720901, 1, 2687055, 720901, 1, 2621519, 720901, 1, 2555983, 720901, 1, 2490447, 720901, 1, 2359359, 65541, 9, 2424895, 65541, 10, 2359360, 65541, 9, 2424896, 65541, 10, 3080254, 458757, 11, 3080255, 65541, 11, 3080256, 65541, 11, 3080257, 65541, 11, 3080258, 65541, 11, 3080259, 65541, 11, 3080260, 65541, 11, 2424894, 720901, 1, 2424898, 65541, 10, 2359358, 720901, 0, 2359357, 65541, 11, 2359356, 65541, 11, 2359355, 65541, 11, 2359354, 65541, 11, 2359353, 5, 11, 2359347, 131077, 11, 2359346, 65541, 11, 2359345, 65541, 11, 2359344, 458757, 11, 2424880, 5, 12, 2424881, 65541, 12, 2424882, 65541, 12, 2424883, 589829, 12, 2424889, 5, 12, 2424890, 65541, 12, 2424891, 65541, 12, 2424892, 65541, 12, 2424893, 65541, 12, 2293839, 720901, 1, 2228303, 720901, 1, 2162767, 720901, 1, 2097231, 720901, 1, 2031695, 720901, 1, 1966159, 720901, 1, 1900623, 720901, 1, 1835087, 720901, 1, 1769551, 720901, 1, 1704015, 720901, 1, 1638479, 720901, 1, 1572943, 720901, 1, 1507407, 720901, 1, 1441871, 720901, 1, 1376335, 720901, 1, 1310799, 720901, 1, 1245263, 720901, 1, 1179727, 720901, 1, 1114191, 720901, 1, 1048655, 720901, 1, 983119, 720901, 1, 917583, 655365, 0, 917552, 786437, 0, 983088, 720901, 1, 1048624, 720901, 1, 1114160, 720901, 1, 1179696, 720901, 1, 1245232, 720901, 1, 1310768, 720901, 1, 1376304, 720901, 1, 1900592, 655365, 0, 1966128, 720901, 1, 2031664, 720901, 1, 2097200, 720901, 1, 2162736, 720901, 1, 2228272, 720901, 1, 2293808, 720901, 1, 1441840, 720901, 1, 1507376, 589829, 11, 1507375, 65541, 11, 1507374, 65541, 11, 1507373, 65541, 11, 1572909, 65541, 12, 1572910, 65541, 12, 1572911, 65541, 12, 1572912, 589829, 12, 1900591, 65541, 11, 1900590, 65541, 11, 1900589, 65541, 11, 1966127, 65541, 12, 1966126, 65541, 12, 1966125, 65541, 12, 983089, 131077, 12, 917559, 458757, 11, 917560, 65541, 11, 917561, 65541, 11, 917562, 65541, 11, 917563, 65541, 11, 917564, 65541, 11, 917565, 65541, 11, 917566, 65541, 11, 917567, 65541, 11, 917568, 65541, 11, 917569, 65541, 11, 917570, 65541, 11, 917571, 65541, 11, 917572, 65541, 11, 917573, 65541, 11, 917574, 65541, 11, 917575, 65541, 11, 917576, 65541, 11, 917577, 65541, 11, 917578, 65541, 11, 917579, 65541, 11, 917580, 65541, 11, 917581, 65541, 11, 917582, 65541, 11, 983095, 5, 12, 983096, 65541, 12, 983097, 65541, 12, 983098, 65541, 12, 983099, 65541, 12, 983100, 65541, 12, 983101, 65541, 12, 983102, 65541, 12, 983103, 65541, 12, 983104, 65541, 12, 983105, 65541, 12, 983106, 65541, 12, 983107, 65541, 12, 983108, 65541, 12, 983109, 65541, 12, 983110, 65541, 12, 983111, 65541, 12, 983112, 65541, 12, 983113, 65541, 12, 983114, 65541, 12, 983115, 65541, 12, 983116, 65541, 12, 983117, 65541, 12, 983118, 65541, 12, 1572904, 5, 12, 1572905, 65541, 12, 1572906, 65541, 12, 1572907, 65541, 12, 1572908, 65541, 12, 1572898, 65541, 12, 1572899, 65541, 12, 1572900, 131077, 12, 1966114, 65541, 12, 1966115, 65541, 12, 1966116, 65541, 12, 1966117, 65541, 12, 1966118, 65541, 12, 1966119, 65541, 12, 1966120, 65541, 12, 1966121, 65541, 12, 1966122, 65541, 12, 1966123, 65541, 12, 1966124, 65541, 12, 1900578, 65541, 11, 1900579, 65541, 11, 1900580, 65541, 11, 1900581, 65541, 11, 1900582, 65541, 11, 1900583, 65541, 11, 1900584, 65541, 11, 1900585, 65541, 11, 1900586, 65541, 11, 1900587, 65541, 11, 1900588, 65541, 11, 1507362, 65541, 11, 1507363, 65541, 11, 1507364, 131077, 11, 1507368, 5, 11, 1507369, 65541, 11, 1507370, 65541, 11, 1507371, 65541, 11, 1507372, 65541, 11, 524317, 786437, 0, 589853, 720901, 1, 655389, 720901, 1, 720925, 720901, 1, 786461, 720901, 1, 851997, 720901, 1, 917533, 720901, 1, 983069, 720901, 1, 1048605, 720901, 1, 1114141, 720901, 1, 1179677, 720901, 1, 1245213, 720901, 1, 1310749, 720901, 1, 1376285, 720901, 1, 1441821, 720901, 1, 524318, 65541, 9, 524319, 65541, 9, 524320, 65541, 9, 524321, 65541, 9, 524322, 65541, 9, 524323, 65541, 9, 524324, 65541, 9, 524325, 65541, 9, 524326, 65541, 9, 524327, 65541, 9, 524328, 65541, 9, 524329, 65541, 9, 524330, 65541, 9, 524331, 65541, 9, 524332, 65541, 9, 524333, 65541, 9, 524334, 65541, 9, 524335, 65541, 9, 589854, 65541, 10, 589855, 65541, 10, 589856, 65541, 10, 589857, 65541, 10, 589858, 65541, 10, 589859, 65541, 10, 589860, 65541, 10, 589861, 65541, 10, 589862, 65541, 10, 589863, 65541, 10, 589864, 65541, 10, 589865, 65541, 10, 589866, 65541, 10, 589867, 65541, 10, 589868, 65541, 10, 589869, 65541, 10, 589870, 65541, 10, 589871, 65541, 10, 1507357, 458757, 11, 1507358, 65541, 11, 1507359, 65541, 11, 1507361, 65541, 11, 1507360, 65541, 11, 1572893, 5, 12, 1572894, 65541, 12, 1572895, 65541, 12, 1572896, 65541, 12, 1572897, 65541, 12, 1966109, 65541, 12, 1966110, 65541, 12, 1966111, 65541, 12, 1966112, 65541, 12, 1966113, 65541, 12, 1900573, 65541, 11, 1900574, 65541, 11, 1900575, 65541, 11, 1900576, 65541, 11, 1900577, 65541, 11, 196663, 720901, 1, 262199, 720901, 1, 327735, 720901, 1, 393271, 720901, 1, 458807, 720901, 1, 524343, 720901, 1, 589879, 720901, 1, 655415, 720901, 1, 720951, 720901, 1, 786487, 720901, 1, 852023, 720901, 1, 131101, 786437, 0, 131102, 65541, 5, 131103, 65541, 5, 131104, 65541, 5, 131105, 65541, 5, 131106, 65541, 5, 131107, 65541, 5, 131108, 65541, 5, 131109, 65541, 5, 131110, 65541, 5, 131111, 65541, 5, 131112, 65541, 5, 131113, 65541, 5, 131114, 65541, 5, 131115, 65541, 5, 131116, 720901, 0, 131117, 65541, 11, 131118, 65541, 11, 131119, 65541, 11, 131120, 65541, 11, 131121, 65541, 11, 131122, 65541, 11, 131123, 65541, 11, 131124, 65541, 11, 131125, 65541, 11, 131126, 65541, 11, 196637, 720901, 1, 262173, 720901, 1, 327709, 720901, 1, 393245, 720901, 1, 458781, 720901, 1, 196638, 524293, 6, 196639, 524293, 6, 196640, 524293, 6, 196641, 524293, 6, 196642, 524293, 6, 196643, 524293, 6, 196644, 524293, 6, 196645, 524293, 6, 196646, 524293, 6, 196647, 524293, 6, 196648, 524293, 6, 196649, 524293, 6, 196650, 524293, 6, 196651, 524293, 6, 196652, 720901, 1, 196653, 65541, 12, 196654, 65541, 12, 196655, 65541, 12, 196656, 65541, 12, 196657, 65541, 12, 196658, 65541, 12, 196659, 65541, 12, 196660, 65541, 12, 196661, 65541, 12, 196662, 65541, 12, 917553, 131077, 11, 262188, 720901, 1, 393260, 196613, 6, 131127, 655365, 0, 327724, 196613, 5, 524337, 131077, 9, 589873, 131077, 10, 524336, 65541, 9, 589872, 65541, 10, 851987, 786437, 0, 851988, 65541, 7, 851989, 65541, 7, 851990, 65541, 7, 851991, 65541, 7, 851992, 65541, 7, 851993, 65541, 7, 851994, 65541, 7, 851995, 65541, 7, 851996, 65541, 7, 917523, 720901, 1, 917524, 65541, 8, 917525, 65541, 8, 917526, 65541, 8, 917527, 65541, 8, 917528, 65541, 8, 917529, 65541, 8, 917530, 65541, 8, 917531, 65541, 8, 917532, 65541, 8, 983059, 720901, 1, 1048595, 720901, 1, 1114131, 720901, 1, 1179667, 720901, 1, 1245203, 720901, 1, 1310739, 720901, 1, 1376275, 720901, 1, 1441811, 720901, 1, 1507347, 720901, 1, 1572883, 720901, 1, 1638419, 720901, 1, 1703955, 720901, 1, 1769491, 720901, 1, 1835027, 720901, 1, 1900563, 5, 11, 1966099, 5, 12, 1900564, 65541, 11, 1900565, 65541, 11, 1900566, 65541, 11, 1900567, 65541, 11, 1900568, 65541, 11, 1900569, 65541, 11, 1900570, 65541, 11, 1900571, 65541, 11, 1900572, 65541, 11, 1966100, 65541, 12, 1966101, 65541, 12, 1966102, 65541, 12, 1966103, 65541, 12, 1966104, 65541, 12, 1966105, 65541, 12, 1966106, 65541, 12, 1966107, 65541, 12, 1966108, 65541, 12, 2359370, 5, 9, 2424906, 5, 10)
+
+[node name="colisao" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_csa6a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(1, 10)
+shape = SubResource("SegmentShape2D_ko34o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_m44v8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(-1, 11)
+shape = SubResource("SegmentShape2D_a07in")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_jro5x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_tpn6a")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(0, -11)
+shape = SubResource("SegmentShape2D_dftng")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_f1yqh")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_m5xbp")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_ysuwm")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_1vrpv")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_dlnlb")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(1016, 585.25)
+shape = SubResource("RectangleShape2D_hix2m")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(1224, 585.5)
+shape = SubResource("RectangleShape2D_cdfyc")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(800, 586)
+shape = SubResource("RectangleShape2D_hdluf")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="paredes/colisao"]
+shape = SubResource("SegmentShape2D_hix2m")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(712, 87)
+shape = SubResource("RectangleShape2D_csa6a")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(639, 137)
+shape = SubResource("RectangleShape2D_ko34o")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(529, 384.25)
+shape = SubResource("RectangleShape2D_m44v8")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(704, 384)
+shape = SubResource("RectangleShape2D_m44v8")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(776, 311.5)
+shape = SubResource("RectangleShape2D_a07in")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="paredes/colisao"]
+position = Vector2(791.5, 240.5)
+shape = SubResource("RectangleShape2D_jro5x")
 
 [node name="decoracao" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_a07in")
@@ -2481,3 +2634,17 @@ layer_3/tile_data = PackedInt32Array(2490435, 786433, 22, 2555971, 786433, 23, 2
 
 [node name="Player" parent="." instance=ExtResource("1_qe200")]
 position = Vector2(1147, 650)
+
+[node name="OfficeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_22fle")
+volume_db = 10.982
+autoplay = true
+attenuation = 5.46416
+
+[node name="Irine" parent="." instance=ExtResource("7_ko34o")]
+position = Vector2(1051, 732)
+scale = Vector2(0.5, 0.5)
+
+[node name="Mira" parent="." instance=ExtResource("8_ko34o")]
+position = Vector2(1149, 259)
+scale = Vector2(0.5, 0.5)
