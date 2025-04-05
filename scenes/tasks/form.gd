@@ -41,9 +41,12 @@ func _ready():
 
 		var label = Label.new()
 		label.text = pergunta.texto
+		label.modulate = Color(0.1, 0.1, 0.1)
+		label.add_theme_font_size_override("font_size", 32)
 		hbox.add_child(label)
 
 		var opcao = OptionButton.new()
+		opcao.add_theme_font_size_override("font_size", 26)
 
 		# Opção inicial fantasma
 		opcao.add_item("Selecione...")
@@ -59,9 +62,15 @@ func _ready():
 		vbox.add_child(hbox)
 
 	var botao = Button.new()
-	botao.text = "Validar Respostas"
+	
+	var spacer = Control.new()
+	spacer.custom_minimum_size = Vector2(0, 20) # 20px de altura
+	vbox.add_child(spacer)
+
+	botao.text = "Entregar"
+	botao.add_theme_font_size_override("font_size", 26)
 	botao.pressed.connect(_validar_respostas)
-	vbox.add_child(botao)
+	vbox.add_child(botao)	
 
 func _validar_respostas():
 	for hbox in vbox.get_children():

@@ -1,13 +1,10 @@
 extends Control
 
 @onready var label = $Panel/Label
-@onready var timer = $Timer
 
-func set_text(text: String, duration: float):
-	print('Dialog: ', text, ' | duration: ', duration, 's')
-	label.text = text
-	timer.start(duration)
-
-func _on_timer_timeout() -> void:
+func set_text(texto: String, duracao: float, callback = null):
+	label.text = texto
+	await get_tree().create_timer(duracao).timeout
 	queue_free()
-	pass
+	if callback:
+		callback.call()

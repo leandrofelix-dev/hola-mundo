@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxgpvvsb5c7yb"]
+[gd_scene load_steps=8 format=3 uid="uid://dxgpvvsb5c7yb"]
 
-[ext_resource type="Script" uid="uid://5vvi7m05t7c3" path="res://scenes/characters/mira/mira.gd" id="1_iumwu"]
 [ext_resource type="Texture2D" uid="uid://fvrmkyb6mjna" path="res://assets/sprites/toinha.png" id="2_ch5g7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cswvv"]
@@ -43,7 +42,6 @@ animations = [{
 size = Vector2(40, 40)
 
 [node name="Mira" type="Node2D"]
-script = ExtResource("1_iumwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yx2g6")
