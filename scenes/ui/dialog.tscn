@@ -13,21 +13,23 @@ offset_right = 51.0
 offset_bottom = 933.0
 script = ExtResource("1_t7mmw")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_top = -101.0
-offset_right = 1825.0
-offset_bottom = 101.0
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -9.0
+offset_top = -99.0
+offset_right = 1800.0
+offset_bottom = 103.0
 theme = SubResource("Theme_t7mmw")
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 31.0
-offset_right = 1795.0
-offset_bottom = 177.0
+clip_contents = true
+layout_mode = 2
+size_flags_stretch_ratio = 0.6
 theme_override_font_sizes/font_size = 36
-text = "Teste"
+text = "..."
+horizontal_alignment = 1
+justification_flags = 160
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

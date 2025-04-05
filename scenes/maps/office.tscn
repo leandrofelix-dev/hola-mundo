@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://brtue6cyl2hfn"]
+[gd_scene load_steps=59 format=3 uid="uid://brtue6cyl2hfn"]
 
 [ext_resource type="Script" uid="uid://bpomha4jf2ry0" path="res://scenes/maps/office.gd" id="1_a07in"]
 [ext_resource type="PackedScene" uid="uid://pt5ammfut28n" path="res://scenes/characters/_player/player.tscn" id="1_qe200"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5eny7p2bhpcw" path="res://assets/tiles/office3.png" id="6_csa6a"]
 [ext_resource type="PackedScene" uid="uid://bu0vo5hhvq2gj" path="res://scenes/characters/mira/mira.tscn" id="8_ko34o"]
 [ext_resource type="PackedScene" uid="uid://dxgpvvsb5c7yb" path="res://scenes/characters/rh_lead/rh.tscn" id="9_m44v8"]
+[ext_resource type="PackedScene" uid="uid://dac66fq6o87td" path="res://scenes/ui/score.tscn" id="11_jro5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yghfa"]
 texture = ExtResource("3_22fle")
@@ -3050,3 +3051,9 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1084, 738)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Score" parent="UI" instance=ExtResource("11_jro5x")]
+offset_left = 17.0
+offset_top = -10.0
+offset_right = 17.0
+offset_bottom = -10.0
