@@ -49,7 +49,7 @@ func _ready():
 		opcao.add_theme_font_size_override("font_size", 26)
 
 		# Opção inicial fantasma
-		opcao.add_item("Selecione...")
+		opcao.add_item("Seleccionar...")
 		opcao.set_item_disabled(0, true)
 
 		for op in pergunta.opcoes:
