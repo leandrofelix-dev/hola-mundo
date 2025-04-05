@@ -23,9 +23,9 @@ func _on_body_entered(body):
 		var ui_layer = get_tree().current_scene.get_node("UI")
 		if ui_layer:
 			ui_layer.add_child(dialog_instance)
-			dialog_instance.set_text("Player: Opa! Bão? Sou novato. Onde fica o RH?", 5.0)
+			dialog_instance.set_text("Player: Opa! Bão? Sou novato. Onde fica o RH?", 8.0)
 			await get_tree().create_timer(2.0).timeout
-			dialog_instance.set_text("Mira: E quem disse que isso é problema meu?", 3.0)
+			dialog_instance.set_text("Mira: E quem disse que isso é problema meu?", 5.0)
 			
 		else:
 			print("UI não encontrado!")

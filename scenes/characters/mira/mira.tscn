@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bu0vo5hhvq2gj"]
 
-[ext_resource type="Script" uid="uid://5vvi7m05t7c3" path="res://scenes/characters/mira.gd" id="1_4wt08"]
+[ext_resource type="Script" uid="uid://5vvi7m05t7c3" path="res://scenes/characters/mira/mira.gd" id="1_4wt08"]
 [ext_resource type="Texture2D" uid="uid://cm4x8wl15gf1l" path="res://assets/sprites/mira.png" id="1_xhgo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wt08"]

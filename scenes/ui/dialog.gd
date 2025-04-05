@@ -3,7 +3,8 @@ extends Control
 @onready var label = $Panel/Label
 @onready var timer = $Timer
 
-func set_text(text: String, duration: float = 2.5):
+func set_text(text: String, duration: float):
+	print('Dialog: ', text, ' | duration: ', duration, 's')
 	label.text = text
 	timer.start(duration)
 

@@ -4,6 +4,8 @@ var office_scene = preload("res://scenes/maps/office.tscn")
 @onready var label = $CanvasLayer/RichTextLabel
 @onready var timer = $Timer
 
+var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
+
 var textos = [
 	"Bruno é um talentoso estudante de TI do IFCE Campus Cedro.",
 	"Sua dedicação rendeu-lhe um estágio cobiçado em uma grande empresa de tecnologia",
@@ -58,4 +60,4 @@ func mostrar_proximo_texto():
 	mostrar_proximo_texto()
 
 func _on_timer_timeout():
-	pass  # Mantido para compatibilidade
+	pass
