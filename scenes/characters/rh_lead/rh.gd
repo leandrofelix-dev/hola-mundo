@@ -25,15 +25,16 @@ func _on_body_entered(body):
 		if ui_layer:
 			ui_layer.add_child(dialog_instance)
 
-			await dialog_instance.set_text("Player: Opa! Bão? Sou novato. Onde fica o RH?", 8.0)
+			await dialog_instance.set_text("Player: Opa! Bão? Sou novato. Onde fica o RH?", 2.0)
+			
+			dialog_instance = dialog_scene.instantiate()
+			ui_layer.add_child(dialog_instance)
 			await dialog_instance.set_text("Mira: E quem disse que isso é problema meu?", 5.0)
-
-			dialog_instance.queue_free()  # Remove o diálogo
-			await get_tree().create_timer(0.5).timeout  # pequena pausa
+			
+			dialog_instance.queue_free()
+			dialog_instance = null
+			await get_tree().create_timer(0.5).timeout
 
 			var report = report_scene.instantiate()
 			ui_layer.add_child(report)
-			report.visible = true  # garante visibilidade
-
-		else:
-			print("UI não encontrado!")
+			report.visible = true
