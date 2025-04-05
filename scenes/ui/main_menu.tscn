@@ -19,8 +19,8 @@ script = ExtResource("1_lt8yj")
 
 [node name="BackgroundShaderedSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_h615w")
-position = Vector2(649, 383)
-scale = Vector2(100, 50)
+position = Vector2(960, 537)
+scale = Vector2(121.375, 68.875)
 texture = ExtResource("3_cruga")
 
 [node name="MainMenuBody" type="MarginContainer" parent="."]
