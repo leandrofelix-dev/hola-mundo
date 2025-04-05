@@ -7,12 +7,17 @@ var office_scene = preload("res://scenes/maps/office.tscn")
 var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
 
 var textos = [
-	"Bruno é um talentoso estudante de TI do IFCE Campus Cedro.",
-	"Sua dedicação rendeu-lhe um estágio cobiçado em uma grande empresa de tecnologia",
-	"Quando menos esperava, surgiu a oportunidade de um intercâmbio acadêmico na Espanha",
-	"Porém...",
-	"Havia um desafio inesperado: sua efetivação na empresa estava condicionada ao domínio do espanhol em um teste de 1 dia na empresa.",
-	"Agora, Bruno precisa provar que é capaz..."
+	"Pedro, estudante de tecnologia no IFCE, recebe sua primeira grande chance.",
+	"Uma vaga na LaCoda, empresa espanhola de tecnologia.",
+	"Mais que uma simples entrevista ou teste.",
+	"Seu desafio é o dia a dia real.",
+	"Se comunicando com falantes nativos do espanhol",
+	"Durante 24 horas, ele vai encarar tarefas como um funcionário da empresa.",
+	"Emails, reuniões, mensagens... e nenhuma delas em português.",
+	"No fim do dia, vem a resposta: contratado ou não.",
+	"Se ele conseguir se virar, a vaga é garantida.",
+	"Se não, volta pra casa com só mais uma história pra contar.",
+	"Topa esse desafio?",
 ]
 var index = 0
 
