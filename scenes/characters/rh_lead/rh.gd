@@ -25,11 +25,11 @@ func _on_body_entered(body):
 		if ui_layer:
 			ui_layer.add_child(dialog_instance)
 
-			await dialog_instance.set_text("Player: Opa! Bão? Sou novato. Onde fica o RH?", 2.0)
+			await dialog_instance.set_text("¡Bienvenido Pedro! Soy María, gerente de contratación.", 4.0)
 			
 			dialog_instance = dialog_scene.instantiate()
 			ui_layer.add_child(dialog_instance)
-			await dialog_instance.set_text("Mira: E quem disse que isso é problema meu?", 5.0)
+			await dialog_instance.set_text("En primer lugar, complete el formulario de consentimiento para que podamos conocernos mejor.", 6.0)
 			
 			dialog_instance.queue_free()
 			dialog_instance = null

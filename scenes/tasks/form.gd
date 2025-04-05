@@ -4,34 +4,34 @@ extends Control
 
 var perguntas = [
 	{
-		"texto": "Declaro que eu,",
+		"texto": "Declaro que yo",
 		"opcoes": ["Pedro", "Irineu"],
 		"correta": "Pedro"
 	},
 	{
-		"texto": "estou dando inicio ao processo de",
-		"opcoes": ["teste", "demissão"],
-		"correta": "teste"
+		"texto": "estoy empezando el proceso de",
+		"opcoes": ["prueba", "renuncia"],
+		"correta": "prueba"
 	},
 	{
-		"texto": "na empresa",
+		"texto": "en",
 		"opcoes": ["LaCoda", "Google"],
 		"correta": "LaCoda"
 	},
 	{
-		"texto": "cuja lingua nativa é o",
-		"opcoes": ["espanhol", "português"],
-		"correta": "espanhol"
+		"texto": "cuya lengua materna es el",
+		"opcoes": ["español", "portugués"],
+		"correta": "español"
 	},
 	{
-		"texto": "com sede em",
-		"opcoes": ["Espanha - Portugal", "Cedro - Brasil"],
-		"correta": "Espanha - Portugal"
+		"texto": "con sede en",
+		"opcoes": ["España - Portugal", "Cedro - Brasil"],
+		"correta": "España - Portugal"
 	},
 	{
-		"texto": "e com previsão de conclusão em",
-		"opcoes": ["1 dia", "400 anos"],
-		"correta": "1 dia"
+		"texto": "y se espera que esté terminado en",
+		"opcoes": ["1 día", "400 años"],
+		"correta": "1 día"
 	}
 ]
 
