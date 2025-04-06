@@ -3065,5 +3065,5 @@ offset_bottom = -10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Mira2" parent="." instance=ExtResource("12_tpn6a")]
-position = Vector2(368, 327)
+position = Vector2(368, 326)
 scale = Vector2(0.5, 0.5)

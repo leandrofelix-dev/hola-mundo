@@ -111,7 +111,7 @@ rotation_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kqtwu")
 animation = &"walk_up"
-frame_progress = 0.177474
+frame_progress = 0.850894
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="AnimatedSprite2D"]
 position = Vector2(1036, 590)
