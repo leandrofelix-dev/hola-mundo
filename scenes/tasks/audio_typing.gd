@@ -1,11 +1,17 @@
 extends Node2D
 
 var phrases = [
-	{ "audio": "res://assets/audio/click1.ogg", "text": "1" },
-	{ "audio": "res://assets/audio/click2.ogg", "text": "2" },
-	{ "audio": "res://assets/audio/click3.ogg", "text": "3" },
-	{ "audio": "res://assets/audio/click4.ogg", "text": "4" },
-	{ "audio": "res://assets/audio/click5.ogg", "text": "5" },
+	{ "audio": "res://assets/audio/frase01.mp3", "text": "trabajo", "trad": "trabalho" },
+	{ "audio": "res://assets/audio/frase02.mp3", "text": "soy un estudiante", "trad": "sou um estudante" },
+	{ "audio": "res://assets/audio/frase03.mp3", "text": "yo vengo de brasil", "trad": "eu venho do brasil" },
+	{ "audio": "res://assets/audio/frase04.mp3", "text": "a qué hora termina el trabajo", "trad": "que horas termina o trabalho" },
+	{ "audio": "res://assets/audio/frase05.mp3", "text": "contrato de trabajo", "trad": "contrato de trabalho" },
+	{ "audio": "res://assets/audio/frase06.mp3", "text": "soy becario", "trad": "sou estagiário" },
+	{ "audio": "res://assets/audio/frase07.mp3", "text": "vacante", "trad": "vaga" },
+	{ "audio": "res://assets/audio/frase08.mp3", "text": "mi currículum", "trad": "meu currículo" },
+	{ "audio": "res://assets/audio/frase09.mp3", "text": "día laborable", "trad": "dia útil" },
+	{ "audio": "res://assets/audio/frase10.mp3", "text": "trabajas jornada parcial o jornada completa?", "trad": "trabalhas a jornada parcial ou a jornada completa?" },
+	{ "audio": "res://assets/audio/frase11.mp3", "text": "te dieron o dan algún tipo de capacitación o entrenamiento para tu trabajo?", "trad": "você recebeu ou oferece algum tipo de treinamento ou treinamento para o seu trabalho?" }
 ]
 
 var current_index = 0
@@ -30,13 +36,14 @@ func tocar_audio():
 	audio_player.play()
 
 func verificar_resposta():
-	var resposta = input_field.text.strip_edges()
-	var correta = phrases[current_index]["text"]
+	var resposta = normalizar(input_field.text)
+	var correta = normalizar(phrases[current_index]["text"])
+	var traducao = phrases[current_index]["trad"]
 
 	if resposta == correta:
-		result_label.text = "✔️ Correcto!"
+		result_label.text = "✔️ Correcto!\nTraducción: %s" % traducao
 	else:
-		result_label.text = "❌ Incorrecto! Respuesta: %s" % correta
+		result_label.text = "❌ Incorrecto!\nRespuesta: %s\nTraducción: %s" % [phrases[current_index]["text"], traducao]
 
 	await get_tree().create_timer(2.0).timeout
 
@@ -50,3 +57,17 @@ func verificar_resposta():
 		input_field.text = ""
 		result_label.text = ""
 		tocar_audio()
+
+func normalizar(text):
+	text = text.strip_edges().to_lower()
+	text = text.replace(".", "").replace(",", "").replace("!", "").replace("¿", "").replace("¡", "").replace("?", "")
+	text = " ".join(text.split(" ", false)) # Remove espaços duplicados
+	return remover_acentos(text)
+
+
+func remover_acentos(text):
+	var acentuados = ["á", "à", "ã", "â", "é", "è", "ê", "í", "ì", "î", "ó", "ò", "ô", "õ", "ú", "ù", "û", "ñ", "ü"]
+	var sem_acento = ["a", "a", "a", "a", "e", "e", "e", "i", "i", "i", "o", "o", "o", "o", "u", "u", "u", "n", "u"]
+	for i in range(acentuados.size()):
+		text = text.replace(acentuados[i], sem_acento[i])
+	return text

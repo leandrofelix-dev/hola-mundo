@@ -5,36 +5,44 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_i53v1")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 611.0
+offset_top = 393.0
+offset_right = 1315.0
+offset_bottom = 786.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainLabel" type="Label" parent="CanvasLayer"]
-offset_left = 743.0
-offset_top = 464.0
-offset_right = 939.0
-offset_bottom = 494.0
+offset_left = 662.0
+offset_top = 440.0
+offset_right = 858.0
+offset_bottom = 470.0
 theme_override_font_sizes/font_size = 32
 text = "Digite o que ouviu:"
 metadata/_edit_use_anchors_ = true
 
 [node name="InputField" type="LineEdit" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_right = 0.196875
-offset_left = 746.0
-offset_top = 505.0
-offset_right = 916.0
-offset_bottom = 543.0
+anchor_right = 0.225521
+offset_left = 662.0
+offset_top = 493.0
+offset_right = 832.0
+offset_bottom = 531.0
 theme_override_font_sizes/font_size = 32
+placeholder_text = "escribe aquí"
 metadata/_edit_use_anchors_ = true
 
 [node name="ResultLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_right = 0.198437
-anchor_bottom = 0.00925926
-offset_left = 748.0
-offset_top = 563.0
-offset_right = 909.0
-offset_bottom = 593.0
+anchor_right = 0.225521
+anchor_bottom = 0.113889
+offset_left = 664.0
+offset_top = 551.0
+offset_right = 825.0
+offset_bottom = 581.0
 theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckButton" type="Button" parent="CanvasLayer"]
@@ -42,10 +50,10 @@ anchors_preset = -1
 anchor_top = -0.00462963
 anchor_right = 0.0208333
 anchor_bottom = 0.000925926
-offset_left = 750.0
-offset_top = 625.0
-offset_right = 829.0
-offset_bottom = 655.0
+offset_left = 1140.0
+offset_top = 717.0
+offset_right = 1219.0
+offset_bottom = 747.0
 theme_override_font_sizes/font_size = 32
 text = "Enviar"
 metadata/_edit_use_anchors_ = true
@@ -53,10 +61,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ReplayButton" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.0302083
-offset_left = 895.0
-offset_top = 619.0
-offset_right = 1052.0
-offset_bottom = 655.0
+offset_left = 659.0
+offset_top = 714.0
+offset_right = 816.0
+offset_bottom = 750.0
 theme_override_font_sizes/font_size = 32
 text = "Escucha de nuevo"
 metadata/_edit_use_anchors_ = true
