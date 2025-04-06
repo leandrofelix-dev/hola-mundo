@@ -3,7 +3,7 @@ extends Node2D
 @onready var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
 @export var dialog_scene: PackedScene = load("res://scenes/ui/dialog.tscn")
 
-var current_pause_menu: Control = null
+var current_pause_menu: CanvasLayer = null
 var dialog_instance: Control = null
 
 func _ready():
@@ -16,11 +16,6 @@ func _ready():
 
 	if has_node("ScoreUI"):
 		$ScoreUI.update_score()
-
-
-
-
-
 
 func _process(_delta):
 	if Input.is_action_just_pressed("escape") and current_pause_menu == null:
