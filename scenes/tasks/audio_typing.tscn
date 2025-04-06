@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr5woboebisvj"]
+[gd_scene load_steps=3 format=3 uid="uid://cr5woboebisvj"]
 
 [ext_resource type="Script" uid="uid://c6ramro7gvb0o" path="res://scenes/tasks/audio_typing.gd" id="1_i53v1"]
+[ext_resource type="Texture2D" uid="uid://bocrywwntt6j1" path="res://assets/bg_listener.png" id="2_be1mf"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_i53v1")
+
+[node name="BgListener" type="Sprite2D" parent="."]
+position = Vector2(967, 625)
+scale = Vector2(1.25781, 1.22803)
+texture = ExtResource("2_be1mf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 611.0
 offset_top = 393.0
 offset_right = 1315.0
-offset_bottom = 786.0
+offset_bottom = 854.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -51,9 +57,9 @@ anchor_top = -0.00462963
 anchor_right = 0.0208333
 anchor_bottom = 0.000925926
 offset_left = 1140.0
-offset_top = 717.0
+offset_top = 801.0
 offset_right = 1219.0
-offset_bottom = 747.0
+offset_bottom = 831.0
 theme_override_font_sizes/font_size = 32
 text = "Enviar"
 metadata/_edit_use_anchors_ = true
@@ -62,9 +68,9 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_right = 0.0302083
 offset_left = 659.0
-offset_top = 714.0
+offset_top = 798.0
 offset_right = 816.0
-offset_bottom = 750.0
+offset_bottom = 834.0
 theme_override_font_sizes/font_size = 32
 text = "Escucha de nuevo"
 metadata/_edit_use_anchors_ = true

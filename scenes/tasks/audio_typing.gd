@@ -15,6 +15,8 @@ var phrases = [
 ]
 
 var current_index = 0
+var audio_finalizado = false
+var resposta_enviada = false
 
 @onready var label = $CanvasLayer/MainLabel
 @onready var input_field = $CanvasLayer/InputField
@@ -26,26 +28,47 @@ var current_index = 0
 func _ready():
 	label.text = "Ingresa lo que escuchaste:"
 	result_label.text = ""
+	check_button.disabled = true
 	check_button.pressed.connect(verificar_resposta)
 	replay_button.pressed.connect(tocar_audio)
+	audio_player.finished.connect(_on_audio_finalizado)
+	input_field.text_changed.connect(_on_text_changed)
 	tocar_audio()
 
 func tocar_audio():
+	audio_finalizado = false
+	resposta_enviada = false
+	check_button.disabled = true
 	var audio_stream = load(phrases[current_index]["audio"])
 	audio_player.stream = audio_stream
 	audio_player.play()
 
+func _on_audio_finalizado():
+	audio_finalizado = true
+	verificar_estado_do_botao()
+
+func _on_text_changed(new_text):
+	verificar_estado_do_botao()
+
+func verificar_estado_do_botao():
+	check_button.disabled = !(audio_finalizado and input_field.text.strip_edges() != "" and !resposta_enviada)
+
 func verificar_resposta():
+	if resposta_enviada:
+		return
+	resposta_enviada = true
+	check_button.disabled = true
+
 	var resposta = normalizar(input_field.text)
 	var correta = normalizar(phrases[current_index]["text"])
 	var traducao = phrases[current_index]["trad"]
 
 	if resposta == correta:
-		result_label.text = "✔️ Correcto!\nTraducción: %s" % traducao
+		result_label.text = "✔️ Correcto!\n🇧🇷Traducción: %s" % traducao
 	else:
-		result_label.text = "❌ Incorrecto!\nRespuesta: %s\nTraducción: %s" % [phrases[current_index]["text"], traducao]
+		result_label.text = "❌ Incorrecto!\n🇪🇸Respuesta: %s\n🇧🇷Traducción: %s" % [phrases[current_index]["text"], traducao]
 
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(4.0).timeout
 
 	current_index += 1
 	if current_index >= phrases.size():
@@ -61,9 +84,8 @@ func verificar_resposta():
 func normalizar(text):
 	text = text.strip_edges().to_lower()
 	text = text.replace(".", "").replace(",", "").replace("!", "").replace("¿", "").replace("¡", "").replace("?", "")
-	text = " ".join(text.split(" ", false)) # Remove espaços duplicados
+	text = " ".join(text.split(" ", false))
 	return remover_acentos(text)
-
 
 func remover_acentos(text):
 	var acentuados = ["á", "à", "ã", "â", "é", "è", "ê", "í", "ì", "î", "ó", "ò", "ô", "õ", "ú", "ù", "û", "ñ", "ü"]
