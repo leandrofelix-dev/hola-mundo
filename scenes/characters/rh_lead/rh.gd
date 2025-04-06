@@ -24,11 +24,15 @@ func _on_body_entered(body):
 		var ui_layer = get_tree().current_scene.get_node("UI")
 		if ui_layer:
 			ui_layer.add_child(dialog_instance)
-			await dialog_instance.set_text("¡Bienvenido Pedro! Soy María, gerente de contratación.", 4.0)
+			await dialog_instance.set_text("Pedro: Hola soy pedro vine a hacer la prueba.", 5.0)
+
+			dialog_instance = dialog_scene.instantiate()
+			ui_layer.add_child(dialog_instance)
+			await dialog_instance.set_text("Maria: ¡Bienvenido Pedro! Soy María, gerente de contratación.", 6.0)
 			
 			dialog_instance = dialog_scene.instantiate()
 			ui_layer.add_child(dialog_instance)
-			await dialog_instance.set_text("En primer lugar, complete el formulário de consentimiento para que podamos conocernos mejor.", 6.0)
+			await dialog_instance.set_text("Maria: Primero, complete el formulario de consentimiento en la mesa para que podamos conocernos mejor.", 8.0)
 			
 			dialog_instance.queue_free()
 			dialog_instance = null
@@ -58,9 +62,22 @@ func show_form(ui_layer: Node):
 			printerr("[RH] Sinal form_completed não encontrado no formulário!")
 
 func _on_form_completed(acertos: int, total_perguntas: int):
-	# Processa pontos rapidamente
 	Global.add_score(acertos * 50)
-	
-	# Não interfere na transição
 	print("[RH] Pontos processados (não bloqueia transição)")
-	
+
+	var ui_layer = get_tree().current_scene.get_node("UI")
+
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("Maria: ¡Muy bien!", 3)
+
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("*Pontuação: %d/%d  (+%d pontos)" % [acertos, total_perguntas, acertos * 50], 5)
+
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("Maria: Tu supervisora, Jessika, está en el comedor, en el lado izquierdo de la oficina. ve a hablar con ella", 8)
+
+	dialog_instance.queue_free()
+	dialog_instance = null

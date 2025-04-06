@@ -18,6 +18,7 @@ shader_parameter/offset = Vector2(0, 0)
 script = ExtResource("1_lt8yj")
 
 [node name="BackgroundShaderedSprite" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_h615w")
 position = Vector2(960, 537)
 scale = Vector2(121.375, 68.875)
@@ -51,7 +52,7 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Let's Learn!"
+text = "¡Hola Mundo!"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer"]
@@ -72,16 +73,19 @@ theme_override_constants/separation = 8
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 28
 text = "Iniciar"
 
 [node name="OptionsButton" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 28
 text = "Ajustes"
 
 [node name="QuitButton" parent="MainMenuBody/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_aa8xj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-text = "Encerra"
+theme_override_font_sizes/font_size = 28
+text = "Sair"

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dac66fq6o87td" path="res://scenes/ui/score.tscn" id="11_jro5x"]
 [ext_resource type="PackedScene" uid="uid://ch1guvcutl0vy" path="res://scenes/characters/jessika/jessika.tscn" id="12_tpn6a"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yghfa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpn6a"]
 texture = ExtResource("3_22fle")
 0:0/0 = 0
 1:0/0 = 0
@@ -448,7 +448,7 @@ texture = ExtResource("3_22fle")
 46:8/0 = 0
 47:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csa6a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dftng"]
 texture = ExtResource("2_8vik5")
 1:0/0 = 0
 2:0/0 = 0
@@ -608,10 +608,10 @@ texture = ExtResource("2_8vik5")
 15:12/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ko34o"]
-sources/1 = SubResource("TileSetAtlasSource_yghfa")
-sources/2 = SubResource("TileSetAtlasSource_csa6a")
+sources/1 = SubResource("TileSetAtlasSource_tpn6a")
+sources/2 = SubResource("TileSetAtlasSource_dftng")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22fle"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1yqh"]
 texture = ExtResource("2_8vik5")
 1:0/0 = 0
 2:0/0 = 0
@@ -771,7 +771,7 @@ texture = ExtResource("2_8vik5")
 15:12/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yghfa"]
-sources/5 = SubResource("TileSetAtlasSource_22fle")
+sources/5 = SubResource("TileSetAtlasSource_f1yqh")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_csa6a"]
 a = Vector2(1264, 754)
@@ -835,7 +835,7 @@ a = Vector2(784, 577)
 b = Vector2(784, 463)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csa6a"]
-size = Vector2(16, 48)
+size = Vector2(16, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko34o"]
 size = Vector2(322, 18)
@@ -849,7 +849,7 @@ size = Vector2(16, 175)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jro5x"]
 size = Vector2(15, 33)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m44v8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5xbp"]
 texture = ExtResource("5_csa6a")
 0:0/0 = 0
 1:0/0 = 0
@@ -1503,7 +1503,7 @@ texture = ExtResource("5_csa6a")
 1:51/0 = 0
 2:51/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ko34o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ysuwm"]
 texture = ExtResource("4_yghfa")
 texture_region_size = Vector2i(32, 32)
 use_texture_padding = false
@@ -2084,7 +2084,7 @@ use_texture_padding = false
 22:22/0 = 0
 23:22/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a07in"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vrpv"]
 texture = ExtResource("6_csa6a")
 0:0/0 = 0
 1:0/0 = 0
@@ -2525,9 +2525,9 @@ texture = ExtResource("6_csa6a")
 16:23/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_a07in"]
-sources/1 = SubResource("TileSetAtlasSource_m44v8")
-sources/2 = SubResource("TileSetAtlasSource_ko34o")
-sources/3 = SubResource("TileSetAtlasSource_a07in")
+sources/1 = SubResource("TileSetAtlasSource_m5xbp")
+sources/2 = SubResource("TileSetAtlasSource_ysuwm")
+sources/3 = SubResource("TileSetAtlasSource_1vrpv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpn6a"]
 size = Vector2(32.5, 4)
@@ -2554,7 +2554,7 @@ size = Vector2(12.5, 8)
 size = Vector2(237, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ghqp"]
-size = Vector2(16, 14)
+size = Vector2(11, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acl4q"]
 size = Vector2(12, 5)
@@ -2658,7 +2658,7 @@ shape = SubResource("RectangleShape2D_hdluf")
 shape = SubResource("SegmentShape2D_hix2m")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="paredes/colisao"]
-position = Vector2(712, 87)
+position = Vector2(712, 78)
 shape = SubResource("RectangleShape2D_csa6a")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="paredes/colisao"]
@@ -2868,7 +2868,7 @@ position = Vector2(1128, 401)
 shape = SubResource("RectangleShape2D_8ghqp")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="decoracao/colisao"]
-position = Vector2(1049, 737)
+position = Vector2(1049.5, 737)
 shape = SubResource("RectangleShape2D_8ghqp")
 
 [node name="CollisionShape2D81" type="CollisionShape2D" parent="decoracao/colisao"]
@@ -3049,11 +3049,15 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_m44v8")
 
 [node name="RH_Lead" parent="." instance=ExtResource("9_m44v8")]
-position = Vector2(1049, 735)
+position = Vector2(1053, 736)
+scale = Vector2(0.5, 0.5)
+
+[node name="Jessika" parent="." instance=ExtResource("12_tpn6a")]
+position = Vector2(368, 326)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("1_qe200")]
-position = Vector2(874, 595)
+position = Vector2(1081, 728)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -3063,7 +3067,3 @@ offset_top = -10.0
 offset_right = 17.0
 offset_bottom = -10.0
 metadata/_edit_use_anchors_ = true
-
-[node name="Mira2" parent="." instance=ExtResource("12_tpn6a")]
-position = Vector2(368, 326)
-scale = Vector2(0.5, 0.5)

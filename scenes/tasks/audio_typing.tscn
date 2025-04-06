@@ -9,7 +9,6 @@ script = ExtResource("1_i53v1")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-visible = false
 offset_left = 611.0
 offset_top = 393.0
 offset_right = 1315.0

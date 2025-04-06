@@ -55,7 +55,8 @@ _data = {
 [node name="LoadingScreen" type="Node"]
 script = ExtResource("1_mlo8p")
 
-[node name="BackgroundShaderedSprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_m2bjy")
 position = Vector2(1346, 905)
 scale = Vector2(400, 200)
@@ -76,7 +77,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 42
-text = "Continue"
+text = "Iniciar"
 
 [node name="LoadingLabel" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
@@ -88,12 +89,12 @@ text = "Carregando..."
 
 [node name="LoadingSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1203, 692)
+position = Vector2(1837, 1004)
 scale = Vector2(4, 4)
 texture = ExtResource("3_ewly3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b2jnx")
+&"": SubResource("AnimationLibrary_b2jnx")
 }
 autoplay = "loading"
