@@ -30,8 +30,8 @@ var perguntas = [
 	},
 	{
 		"texto": "con sede en",
-		"opcoes": ["España - Portugal", "Cedro - Brasil"],
-		"correta": "España - Portugal"
+		"opcoes": ["Santiago de Compostela - España", "Cedro - Brasil"],
+		"correta": "Santiago de Compostela - España"
 	},
 	{
 		"texto": "y se espera que esté terminado en",

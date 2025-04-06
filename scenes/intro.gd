@@ -17,6 +17,9 @@ var bg_images = [
 var textos = [
 	"Pedro, estudante de tecnologia no IFCE, recebe sua primeira grande chance.",
 	"Uma vaga na LaCoda, empresa espanhola de tecnologia.",
+	"Localizada em Santiago de Compostela, na Espanha.",
+	"Então ele faz as malas e viaja rumo ao seu sonho.",
+	"Porém...",
 	"Mais que uma simples entrevista ou teste.",
 	"Seu desafio é o dia a dia real.",
 	"Se comunicando com falantes nativos do espanhol",
@@ -26,6 +29,8 @@ var textos = [
 	"Se ele conseguir se virar, a vaga é garantida.",
 	"Se não, volta pra casa com só mais uma história pra contar.",
 	"Topa esse desafio?",
+	"* Pedro acaba de chegar ao escritório, para seu desafio.",
+	"Agora é com você!",
 ]
 var index = 0
 
@@ -36,12 +41,12 @@ func _ready():
 	mostrar_proximo_texto()
 
 func atualizar_background():
-	if index <= 2:
+	if index <= 1:
 		background.texture = bg_images[0] # escola
-	elif index <= 4:
-		background.texture = bg_images[1] # avião
-	elif index <= 6:
-		background.texture = bg_images[2] # chegada
+	elif index == 2:
+		background.texture = bg_images[2] # cidade
+	elif index <= 8:
+		background.texture = bg_images[1] # aviao
 	else:
 		background.texture = bg_images[3] # escritório
 

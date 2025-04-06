@@ -24,8 +24,8 @@ func _on_body_entered(body):
 		if ui_layer:
 			ui_layer.add_child(dialog_instance)
 
-			await dialog_instance.set_text("Pedro: ¡Hola! Es mi primer día aquí. ¿Dónde está la sala de recursos humanos?", 6.0)
+			await dialog_instance.set_text("Pedro: ¡Hola! JESSIKA", 6.0)
 
 			dialog_instance = dialog_scene.instantiate()
 			ui_layer.add_child(dialog_instance)
-			await dialog_instance.set_text("Mira: ¡Por supuesto! ¡Bienvenido! Está abajo a la derecha. Busque a la chica gerente de contratación.", 8.0)
+			await dialog_instance.set_text("Jessika: AAAAA.", 8.0)

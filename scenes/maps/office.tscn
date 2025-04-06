@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://brtue6cyl2hfn"]
+[gd_scene load_steps=60 format=3 uid="uid://brtue6cyl2hfn"]
 
 [ext_resource type="Script" uid="uid://bpomha4jf2ry0" path="res://scenes/maps/office.gd" id="1_a07in"]
 [ext_resource type="PackedScene" uid="uid://pt5ammfut28n" path="res://scenes/characters/_player/player.tscn" id="1_qe200"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0vo5hhvq2gj" path="res://scenes/characters/mira/mira.tscn" id="8_ko34o"]
 [ext_resource type="PackedScene" uid="uid://dxgpvvsb5c7yb" path="res://scenes/characters/rh_lead/rh.tscn" id="9_m44v8"]
 [ext_resource type="PackedScene" uid="uid://dac66fq6o87td" path="res://scenes/ui/score.tscn" id="11_jro5x"]
+[ext_resource type="PackedScene" uid="uid://ch1guvcutl0vy" path="res://scenes/characters/jessika/jessika.tscn" id="12_tpn6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yghfa"]
 texture = ExtResource("3_22fle")
@@ -2870,6 +2871,10 @@ shape = SubResource("RectangleShape2D_8ghqp")
 position = Vector2(1049, 737)
 shape = SubResource("RectangleShape2D_8ghqp")
 
+[node name="CollisionShape2D81" type="CollisionShape2D" parent="decoracao/colisao"]
+position = Vector2(368, 328)
+shape = SubResource("RectangleShape2D_8ghqp")
+
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="decoracao/colisao"]
 position = Vector2(1176, 401)
 shape = SubResource("RectangleShape2D_8ghqp")
@@ -3035,7 +3040,7 @@ position = Vector2(568, 85)
 shape = SubResource("RectangleShape2D_l1pg6")
 
 [node name="Mira" parent="." instance=ExtResource("8_ko34o")]
-position = Vector2(897, 335)
+position = Vector2(986, 499)
 scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mira"]
@@ -3048,7 +3053,7 @@ position = Vector2(1049, 735)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("1_qe200")]
-position = Vector2(1084, 738)
+position = Vector2(874, 595)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -3057,3 +3062,8 @@ offset_left = 17.0
 offset_top = -10.0
 offset_right = 17.0
 offset_bottom = -10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Mira2" parent="." instance=ExtResource("12_tpn6a")]
+position = Vector2(368, 327)
+scale = Vector2(0.5, 0.5)

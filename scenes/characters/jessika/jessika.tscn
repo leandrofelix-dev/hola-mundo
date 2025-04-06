@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch1guvcutl0vy"]
+
+[ext_resource type="Script" uid="uid://grl4iholqg8w" path="res://scenes/characters/jessika/jessika.gd" id="1_n084j"]
+[ext_resource type="Texture2D" uid="uid://oeqwtvqmuegm" path="res://assets/sprites/jessika.png" id="2_n084j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqynt"]
+atlas = ExtResource("2_n084j")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0wjj"]
+atlas = ExtResource("2_n084j")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au2gc"]
+atlas = ExtResource("2_n084j")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m357"]
+atlas = ExtResource("2_n084j")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx2g6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqynt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0wjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au2gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m357")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wt08"]
+size = Vector2(40, 40)
+
+[node name="Mira" type="Node2D"]
+script = ExtResource("1_n084j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yx2g6")
+animation = &"idle"
+frame_progress = 0.701533
+speed_scale = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4wt08")

@@ -63,3 +63,4 @@ func _on_form_completed(acertos: int, total_perguntas: int):
 	
 	# Não interfere na transição
 	print("[RH] Pontos processados (não bloqueia transição)")
+	

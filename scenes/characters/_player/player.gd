@@ -27,7 +27,12 @@ func _physics_process(delta):
 
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction.normalized() * max_speed, acceleration * delta * 100)
-		anim.play("walk")
+		
+		# Animação diferente pra cima
+		if direction.y < 0:
+			anim.play("walk_up")
+		else:
+			anim.play("walk")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta * 100)
 		anim.play("idle") 

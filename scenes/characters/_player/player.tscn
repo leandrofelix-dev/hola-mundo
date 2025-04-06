@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://pt5ammfut28n"]
+[gd_scene load_steps=17 format=3 uid="uid://pt5ammfut28n"]
 
 [ext_resource type="Script" uid="uid://c785n8sq6i3d3" path="res://scenes/characters/_player/player.gd" id="1_ia0qf"]
 [ext_resource type="Texture2D" uid="uid://cu56sboxqsiv7" path="res://assets/sprites/main_character.png" id="2_b3awc"]
 [ext_resource type="Texture2D" uid="uid://dmhcnpy2vifoe" path="res://assets/sprites/walk.png" id="3_76oj4"]
+[ext_resource type="Texture2D" uid="uid://p0pspm4bynut" path="res://assets/sprites/walk_up.png" id="4_4llxe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3dn0"]
 radius = 13.0
@@ -26,6 +27,22 @@ region = Rect2(72, 0, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6eyoc"]
 atlas = ExtResource("3_76oj4")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4llxe"]
+atlas = ExtResource("4_4llxe")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwm2s"]
+atlas = ExtResource("4_4llxe")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfib2"]
+atlas = ExtResource("4_4llxe")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj7hd"]
+atlas = ExtResource("4_4llxe")
 region = Rect2(108, 0, 36, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kqtwu"]
@@ -54,6 +71,23 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4llxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwm2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfib2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj7hd")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yewv4"]
@@ -76,8 +110,8 @@ rotation_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kqtwu")
-animation = &"walk"
-frame_progress = 0.926691
+animation = &"walk_up"
+frame_progress = 0.177474
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="AnimatedSprite2D"]
 position = Vector2(1036, 590)
