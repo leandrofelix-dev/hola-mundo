@@ -35,7 +35,7 @@ var perguntas = [
 	},
 	{
 		"texto": "y se espera que esté terminado en",
-		"opcoes": ["1 día", "400 años"],
+		"opcoes": ["1 día", "400 días"],
 		"correta": "1 día"
 	}
 ]
@@ -93,19 +93,10 @@ func _validar_respostas():
 				acertos += 1
 
 	emit_signal("form_completed", acertos, perguntas.size())
-	
-	# Garante que o sinal seja processado
-	await get_tree().process_frame
-	
-	# Troca de cena COM FALLBACK
-	if office_scene and office_scene.can_instantiate():
-		# Remove o formulário antes de trocar
-		queue_free()  
-		
-		# Método mais confiável para trocar cenas
-		get_tree().change_scene_to_packed(office_scene)
-		print("[FORM] Cena trocada com SUCESSO para office.tscn")
-	else:
-		printerr("[FORM] FALHA: office_scene inválida!")
-		# Fallback visual
-		visible = false
+
+	# Aguarda só pra garantir entrega do sinal antes de remover
+	await get_tree().create_timer(0.1).timeout
+
+	# Remove apenas o formulário
+	get_parent().remove_child(self)
+	queue_free()

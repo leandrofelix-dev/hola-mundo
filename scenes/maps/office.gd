@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
 @export var dialog_scene: PackedScene = load("res://scenes/ui/dialog.tscn")
+@onready var form_maria_scene = preload("res://scenes/forms/form_maria.tscn")
 
 var current_pause_menu: CanvasLayer = null
 var dialog_instance: Control = null
@@ -22,3 +23,12 @@ func _process(_delta):
 		current_pause_menu = pause_menu.instantiate()
 		add_child(current_pause_menu)
 		current_pause_menu.tree_exited.connect(func(): current_pause_menu = null)
+
+func iniciar_formulario_maria():
+	var form_maria = form_maria_scene.instantiate()
+	$UI.add_child(form_maria)
+
+	form_maria.form_completed.connect(_on_formulario_maria_completo)
+
+func _on_formulario_maria_completo(pontuacao, total):
+	print("Formulário Maria finalizado. Pontuação: %d/%d" % [pontuacao, total])

@@ -13,42 +13,59 @@ func _ready():
 	if area:
 		area.body_entered.connect(_on_body_entered)
 	else:
-		printerr("Area2D não encontrada!")
+		print("Area2D não foi encontrada!")
 
 func _physics_process(_delta):
 	anim.play("idle")
 
 func _on_body_entered(body):
 	if body is CharacterBody2D and dialog_instance == null:
-		var ui_layer = get_ui_layer()
-		if not ui_layer:
+		var current = get_tree().get_current_scene()
+		if current == null:
+			print("[ERRO] current_scene ainda é null!")
 			return
 
+		var ui_layer = current.get_node("UI")
+		if ui_layer == null:
+			print("[ERRO] UI não encontrado na cena atual!")
+			return
+		if not ui_layer:
+			print("UI layer não encontrado!")
+			return
+
+		# Diálogo 1
 		dialog_instance = dialog_scene.instantiate()
 		ui_layer.add_child(dialog_instance)
-		await dialog_instance.set_text("Pedro: Hola soy pedro vine a hacer la prueba.", 5.0)
+		await dialog_instance.set_text("Pedro: Hola soy Pedro, vine a hacer la prueba.", 5.0)
+		dialog_instance.queue_free()
+		dialog_instance = null
 
+		# Diálogo 2
 		dialog_instance = dialog_scene.instantiate()
 		ui_layer.add_child(dialog_instance)
 		await dialog_instance.set_text("Maria: ¡Bienvenido Pedro! Soy María, gerente de contratación.", 6.0)
-		
+		dialog_instance.queue_free()
+		dialog_instance = null
+
+		# Diálogo 3
 		dialog_instance = dialog_scene.instantiate()
 		ui_layer.add_child(dialog_instance)
 		await dialog_instance.set_text("Maria: Primero, complete el formulario de consentimiento en la mesa para que podamos conocernos mejor.", 8.0)
-
 		dialog_instance.queue_free()
 		dialog_instance = null
+
 		await get_tree().create_timer(0.5).timeout
 
+		# Mostrar o formulário
 		show_form(ui_layer)
 
 func show_form(ui_layer: Node):
 	if form_instance == null:
 		form_instance = report_scene.instantiate()
 		ui_layer.add_child(form_instance)
-		
-		var callable = Callable(self, "_on_form_completed")
+
 		if form_instance.has_signal("form_completed"):
+			var callable = Callable(self, "_on_form_completed")
 			if not form_instance.is_connected("form_completed", callable):
 				var result = form_instance.connect("form_completed", callable, CONNECT_DEFERRED | CONNECT_PERSIST)
 				if result == OK:
@@ -62,32 +79,40 @@ func _on_form_completed(acertos: int, total_perguntas: int):
 	Global.add_score(acertos * 50)
 	print("[RH] Pontos processados (não bloqueia transição)")
 
-	var ui_layer = get_ui_layer()
+	var current = get_tree().get_current_scene()
+	if current == null:
+		print("[ERRO] current_scene ainda é null!")
+		return
+
+	var ui_layer = current.get_node("UI")
+	if ui_layer == null:
+		print("[ERRO] UI não encontrado na cena atual!")
+		return
 	if not ui_layer:
 		return
 
+	# Diálogo 1
 	dialog_instance = dialog_scene.instantiate()
 	ui_layer.add_child(dialog_instance)
-	await dialog_instance.set_text("Maria: ¡Muy bien!", 3)
+	await dialog_instance.set_text("Maria: ¡Muy bien!", 3.0)
 	dialog_instance.queue_free()
-
-	dialog_instance = dialog_scene.instantiate()
-	ui_layer.add_child(dialog_instance)
-	await dialog_instance.set_text("*Pontuação: %d/%d  (+%d pontos)" % [acertos, total_perguntas, acertos * 50], 5)
-	dialog_instance.queue_free()
-
-	dialog_instance = dialog_scene.instantiate()
-	ui_layer.add_child(dialog_instance)
-	await dialog_instance.set_text("Maria: Tu supervisora, Jessika, está en el comedor, en el lado izquierdo de la oficina. ve a hablar con ella", 8)
-	dialog_instance.queue_free()
-
 	dialog_instance = null
 
-func get_ui_layer() -> Node:
-	var root = get_tree().root
-	if root.get_child_count() > 0:
-		var current_scene = root.get_child(0)
-		if current_scene.has_node("UI"):
-			return current_scene.get_node("UI")
-	printerr("[ERRO] UI Layer não encontrada.")
-	return null
+	# Diálogo 2
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("*Pontuação: %d/%d  (+%d pontos)" % [acertos, total_perguntas, acertos * 50], 5.0)
+	dialog_instance.queue_free()
+	dialog_instance = null
+
+	# Diálogo 3
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("Maria: Tu supervisora, Jessika, está en el comedor, en el lado izquierdo de la oficina. Ve a hablar con ella.", 8.0)
+	dialog_instance.queue_free()
+	dialog_instance = null
+
+	# Limpar formulário
+	if form_instance:
+		form_instance.queue_free()
+		form_instance = null
