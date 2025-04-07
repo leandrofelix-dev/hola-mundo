@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbp7ehsehql2v"]
+
+[ext_resource type="Script" uid="uid://dmim140uhjamr" path="res://scenes/characters/boss/boss.gd" id="1_kp4i8"]
+[ext_resource type="Texture2D" uid="uid://27bvyyat35mp" path="res://assets/sprites/boss.png" id="2_kp4i8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1xi1"]
+atlas = ExtResource("2_kp4i8")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbs2p"]
+atlas = ExtResource("2_kp4i8")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcw0o"]
+atlas = ExtResource("2_kp4i8")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce6vb"]
+atlas = ExtResource("2_kp4i8")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx2g6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1xi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbs2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcw0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce6vb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wt08"]
+size = Vector2(40, 40)
+
+[node name="Mira" type="Node2D"]
+script = ExtResource("1_kp4i8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yx2g6")
+animation = &"idle"
+frame_progress = 0.971471
+speed_scale = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4wt08")

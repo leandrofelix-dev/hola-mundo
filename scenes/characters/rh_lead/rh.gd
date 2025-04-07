@@ -4,10 +4,11 @@ extends Node2D
 @onready var area: Area2D = $Area2D
 
 var dialog_instance: Control = null
-var form_instance: Control = null
+var form_instance: Node = null
 
 @export var dialog_scene: PackedScene = preload("res://scenes/ui/dialog.tscn")
-@export var report_scene: PackedScene = preload("res://scenes/tasks/form.tscn")
+var report_scene: PackedScene = preload("res://scenes/tasks/form.tscn")
+
 
 func _ready():
 	if area:
@@ -29,9 +30,8 @@ func _on_body_entered(body):
 		if ui_layer == null:
 			print("[ERRO] UI não encontrado na cena atual!")
 			return
-		if not ui_layer:
-			print("UI layer não encontrado!")
-			return
+
+		print("[DEBUG] Iniciando diálogos...")
 
 		# Diálogo 1
 		dialog_instance = dialog_scene.instantiate()
@@ -56,12 +56,19 @@ func _on_body_entered(body):
 
 		await get_tree().create_timer(0.5).timeout
 
-		# Mostrar o formulário
+		print("[DEBUG] Chamando show_form...")
 		show_form(ui_layer)
 
 func show_form(ui_layer: Node):
 	if form_instance == null:
-		form_instance = report_scene.instantiate()
+		print("[DEBUG] report_scene válido?", report_scene)
+		var instance = report_scene.instantiate()
+		if instance == null:
+			print("[RH] ERRO: Instância retornou null mesmo com report_scene válido!")
+			return
+
+		print("[RH] Instância criada com sucesso:", instance)
+		form_instance = instance
 		ui_layer.add_child(form_instance)
 
 		if form_instance.has_signal("form_completed"):
@@ -88,8 +95,6 @@ func _on_form_completed(acertos: int, total_perguntas: int):
 	if ui_layer == null:
 		print("[ERRO] UI não encontrado na cena atual!")
 		return
-	if not ui_layer:
-		return
 
 	# Diálogo 1
 	dialog_instance = dialog_scene.instantiate()
@@ -101,7 +106,7 @@ func _on_form_completed(acertos: int, total_perguntas: int):
 	# Diálogo 2
 	dialog_instance = dialog_scene.instantiate()
 	ui_layer.add_child(dialog_instance)
-	await dialog_instance.set_text("*Pontuação: %d/%d  (+%d pontos)" % [acertos, total_perguntas, acertos * 50], 5.0)
+	await dialog_instance.set_text("*Pontuação: %d/%d  (+%d puntos)" % [acertos, total_perguntas, acertos * 50], 5.0)
 	dialog_instance.queue_free()
 	dialog_instance = null
 

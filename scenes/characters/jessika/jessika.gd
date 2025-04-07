@@ -72,11 +72,18 @@ func _on_form_completed(acertos: int, total_perguntas: int):
 	print("[JESSIKA] Pontos processados (não bloqueia transição)")
 
 	var ui_layer = get_tree().current_scene.get_node("UI")
+	
+	# Fala de pontuação
 	dialog_instance = dialog_scene.instantiate()
 	ui_layer.add_child(dialog_instance)
-
 	await dialog_instance.set_text("Você concluiu a atividade! Pontuação: %d/%d (+%d pontos)" % [acertos, total_perguntas, acertos * 50], 3.5)
+	dialog_instance.queue_free()
+	dialog_instance = null
 
+	# Fala final
+	dialog_instance = dialog_scene.instantiate()
+	ui_layer.add_child(dialog_instance)
+	await dialog_instance.set_text("Jessika: El jefe quiere hablar contigo. Su oficina está arriba a la izquierda.", 5.0)
 	dialog_instance.queue_free()
 	dialog_instance = null
 

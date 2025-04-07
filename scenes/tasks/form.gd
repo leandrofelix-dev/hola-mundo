@@ -3,41 +3,14 @@ extends Control
 signal form_completed(acertos: int, total_perguntas: int)
 
 @onready var vbox = $VBoxContainer
-var office_scene: PackedScene = preload("res://scenes/maps/office.tscn")
-var rh_scene: PackedScene = preload("res://scenes/characters/rh_lead/rh.tscn")
-var ui_layer: Node = null
 
 var perguntas = [
-	{
-		"texto": "Declaro que yo",
-		"opcoes": ["Pedro", "Irineu"],
-		"correta": "Pedro"
-	},
-	{
-		"texto": "estoy empezando el proceso de",
-		"opcoes": ["prueba", "renuncia"],
-		"correta": "prueba"
-	},
-	{
-		"texto": "en",
-		"opcoes": ["LaCoda", "Google"],
-		"correta": "LaCoda"
-	},
-	{
-		"texto": "cuya lengua materna es el",
-		"opcoes": ["español", "portugués"],
-		"correta": "español"
-	},
-	{
-		"texto": "con sede en",
-		"opcoes": ["Santiago de Compostela - España", "Cedro - Brasil"],
-		"correta": "Santiago de Compostela - España"
-	},
-	{
-		"texto": "y se espera que esté terminado en",
-		"opcoes": ["1 día", "400 días"],
-		"correta": "1 día"
-	}
+	{"texto": "Declaro que yo", "opcoes": ["Pedro", "Irineu"], "correta": "Pedro"},
+	{"texto": "estoy empezando el proceso de", "opcoes": ["prueba", "renuncia"], "correta": "prueba"},
+	{"texto": "en", "opcoes": ["LaCoda", "Google"], "correta": "LaCoda"},
+	{"texto": "cuya lengua materna es el", "opcoes": ["español", "portugués"], "correta": "español"},
+	{"texto": "con sede en", "opcoes": ["Santiago de Compostela - España", "Cedro - Brasil"], "correta": "Santiago de Compostela - España"},
+	{"texto": "y se espera que esté terminado en", "opcoes": ["1 día", "400 días"], "correta": "1 día"}
 ]
 
 func _ready():
@@ -52,7 +25,6 @@ func _ready():
 
 		var opcao = OptionButton.new()
 		opcao.add_theme_font_size_override("font_size", 26)
-
 		opcao.add_item("Seleccionar...")
 		opcao.set_item_disabled(0, true)
 
@@ -61,7 +33,6 @@ func _ready():
 
 		opcao.select(0)
 		opcao.set_meta("correta", pergunta.correta)
-
 		hbox.add_child(opcao)
 		vbox.add_child(hbox)
 
@@ -80,7 +51,7 @@ func _validar_respostas():
 		if hbox is HBoxContainer:
 			var opcao = hbox.get_child(1)
 			if opcao.selected == 0:
-				print("Responda todas as perguntas!")
+				print("[FORM] Responda todas as perguntas!")
 				return
 
 	var acertos = 0
@@ -94,9 +65,6 @@ func _validar_respostas():
 
 	emit_signal("form_completed", acertos, perguntas.size())
 
-	# Aguarda só pra garantir entrega do sinal antes de remover
 	await get_tree().create_timer(0.1).timeout
-
-	# Remove apenas o formulário
 	get_parent().remove_child(self)
 	queue_free()

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
 @export var dialog_scene: PackedScene = load("res://scenes/ui/dialog.tscn")
-@onready var form_maria_scene = preload("res://scenes/forms/form_maria.tscn")
+@onready var form_maria_scene = preload("res://scenes/tasks/form.tscn")
 
 var current_pause_menu: CanvasLayer = null
 var dialog_instance: Control = null

@@ -9,7 +9,7 @@ anchors_preset = 0
 script = ExtResource("1_mkfok")
 
 [node name="Report" type="Sprite2D" parent="."]
-position = Vector2(959.5, 540)
+position = Vector2(959, 537)
 scale = Vector2(1.49922, 1.5)
 texture = ExtResource("2_mkfok")
 
