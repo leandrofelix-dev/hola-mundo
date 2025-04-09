@@ -24,10 +24,13 @@ func _on_body_entered(body):
 		await _mostrar_dialogo("Jefe: tienes una puntuación de: " + str(Global.score), 4.0)
 		await _mostrar_dialogo("Jefe: dicho esto te informo que: ", 4.0)
 
-		if Global.score >= 700:
+		if Global.score >= 300:
 			await _mostrar_dialogo("Jefe: ¡Eres el nuevo miembro de la empresa! ¡Felicidades!", 4.0)
 		else:
 			await _mostrar_dialogo("Jefe: No fue esta vez. No cumpliste con los requisitos", 4.0)
+		
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://scenes/ui/theend.tscn")
 
 func _mostrar_dialogo(texto: String, tempo: float):
 	var ui_layer = get_tree().current_scene.get_node("UI")

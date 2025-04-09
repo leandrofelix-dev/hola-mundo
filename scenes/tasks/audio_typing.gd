@@ -3,17 +3,17 @@ extends Node2D
 signal form_completed(pontuacao, total)
 
 var phrases = [
-	{ "audio": "res://assets/audio/frase01.mp3", "text": "trabajo", "trad": "trabalho" },
 	{ "audio": "res://assets/audio/frase02.mp3", "text": "soy un estudiante", "trad": "sou um estudante" },
 	{ "audio": "res://assets/audio/frase03.mp3", "text": "yo vengo de brasil", "trad": "eu venho do brasil" },
-	{ "audio": "res://assets/audio/frase04.mp3", "text": "¿a qué hora termina el trabajo?", "trad": "que horas termina o trabalho?" },
 	{ "audio": "res://assets/audio/frase05.mp3", "text": "contrato de trabajo", "trad": "contrato de trabalho" },
-	{ "audio": "res://assets/audio/frase06.mp3", "text": "soy becario", "trad": "sou bolsista" },
-	{ "audio": "res://assets/audio/frase07.mp3", "text": "vacante", "trad": "vaga" },
-	{ "audio": "res://assets/audio/frase08.mp3", "text": "mi currículum", "trad": "meu currículo" },
 	{ "audio": "res://assets/audio/frase09.mp3", "text": "día laborable", "trad": "dia útil" },
-	{ "audio": "res://assets/audio/frase10.mp3", "text": "¿trabajas jornada parcial o jornada completa?", "trad": "trabalhas a jornada parcial ou a jornada completa?" },
-	{ "audio": "res://assets/audio/frase11.mp3", "text": "¿te dieron o dan algún tipo de capacitación o entrenamiento para tu trabajo?", "trad": "você recebeu ou recebe algum tipo de capacitação ou treinamento para o seu trabalho?" }
+	#{ "audio": "res://assets/audio/frase01.mp3", "text": "trabajo", "trad": "trabalho" },
+	#{ "audio": "res://assets/audio/frase04.mp3", "text": "¿a qué hora termina el trabajo?", "trad": "que horas termina o trabalho?" },
+	#{ "audio": "res://assets/audio/frase06.mp3", "text": "soy becario", "trad": "sou bolsista" },
+	#{ "audio": "res://assets/audio/frase07.mp3", "text": "vacante", "trad": "vaga" },
+	#{ "audio": "res://assets/audio/frase08.mp3", "text": "mi currículum", "trad": "meu currículo" },
+	#{ "audio": "res://assets/audio/frase10.mp3", "text": "¿trabajas jornada parcial o jornada completa?", "trad": "trabalhas a jornada parcial ou a jornada completa?" },
+	#{ "audio": "res://assets/audio/frase11.mp3", "text": "¿te dieron o dan algún tipo de capacitación o entrenamiento para tu trabajo?", "trad": "você recebeu ou recebe algum tipo de capacitação ou treinamento para o seu trabalho?" }
 ]
 
 @onready var label = $CanvasLayer/MainLabel

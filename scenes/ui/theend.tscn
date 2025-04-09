@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtlrjurecsq8h"]
+
+[ext_resource type="Texture2D" uid="uid://xd45n52nmwd5" path="res://assets/images/theend.png" id="1_lra52"]
+
+[node name="Theend" type="Node2D"]
+
+[node name="Theend" type="Sprite2D" parent="."]
+position = Vector2(959, 600)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("1_lra52")
